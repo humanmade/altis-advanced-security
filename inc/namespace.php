@@ -29,7 +29,6 @@ function bootstrap() {
  */
 function on_plugins_loaded() {
 	$config = Altis\get_config()['modules']['advanced-security'];
-	echo "config: " . $config['enabled'] . "\n";
 
 	if ( $config['enabled'] ) {
 		if ( file_exists( WP_PLUGIN_DIR . '/patchstack/patchstack.php' ) ) {
