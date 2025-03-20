@@ -1,40 +1,24 @@
 {
-    "name": "altis/advanced-security",
-	"description": "Advanced Security Add-on, powered by Patchstack",
-	"type": "library",
-	"license": "GPL-2.0-or-later",
-	"authors": [
-		{
-			"name": "Human Made",
-			"email": "hello@humanmade.com"
-		}
-	],
-	"repositories": [
-		{
-		"type": "composer",
-		"url": "https://wpackagist.org"
-		}
-	],
-    "autoload": {
-        "files": [
-            "inc/namespace.php"
-        ],
-        "classmap": [
-            "inc/"
-        ]
-    },
-    "require": {
-		"php": ">=7.1",
-		"altis/core": "^22.0.0",
-		"wpackagist-plugin/patchstack": "^2.3.0"
-    },
-    "extra": {
-        "altis": {}
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "altis/core": true
-        }
+  "name": "altis/advanced-security",
+  "description": "Advanced Security Add-on, powered by Patchstack",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Human Made",
+      "email": "hello@humanmade.com"
     }
+  ],
+  "autoload": {
+    "files": [
+      "inc/namespace.php"
+    ]
+  },
+  "require": {
+    "php": ">=8.2",
+    "wpackagist-plugin/patchstack": "^2.3.0"
+  },
+  "extra": {
+    "altis": {}
+  }
 }
