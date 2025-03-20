@@ -9,10 +9,6 @@ namespace Altis\Advanced_Security;
 
 use Altis;
 
-if ( ! function_exists( 'is_plugin_active' ) ) {
-    require_once ABSPATH . 'wp-admin/includes/plugin.php';
-}
-
 /**
  * Set up action hooks.
  *
@@ -32,6 +28,9 @@ function on_plugins_loaded() {
 
 	if ( $config['enabled'] ) {
 		if ( file_exists( WP_PLUGIN_DIR . '/patchstack/patchstack.php' ) ) {
+			if ( ! function_exists( 'is_plugin_active' ) ) {
+				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+			}			
 			if ( !is_plugin_active( 'patchstack/patchstack.php' ) ) {
 				activate_plugin( WP_PLUGIN_DIR . '/patchstack/patchstack.php', '', true );
 			}
