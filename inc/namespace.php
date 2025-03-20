@@ -27,13 +27,8 @@ function on_plugins_loaded() {
 	$config = Altis\get_config()['modules']['advanced-security'];
 
 	if ( $config['enabled'] ) {
-		if ( file_exists( WP_PLUGIN_DIR . '/patchstack/patchstack.php' ) ) {
-			if ( ! function_exists( 'is_plugin_active' ) ) {
-				require_once ABSPATH . 'wp-admin/includes/plugin.php';
-			}			
-			if ( !is_plugin_active( 'patchstack/patchstack.php' ) ) {
-				activate_plugin( WP_PLUGIN_DIR . '/patchstack/patchstack.php', '', true );
-			}
+		if ( file_exists( Altis\ROOT_DIR . '/content/plugins/patchstack/patchstack.php' ) ) {
+			require_once Altis\ROOT_DIR . '/content/plugins/patchstack/patchstack.php';
 		}
 	}
 }
