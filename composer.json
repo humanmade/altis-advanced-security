@@ -14,6 +14,16 @@
       "inc/namespace.php"
     ]
   },
+  "repositories": {
+    "wpackagist": {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  },
   "require": {
     "php": ">=8.2",
     "wpackagist-plugin/patchstack": "^2.3.0"
