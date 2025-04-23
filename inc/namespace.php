@@ -26,6 +26,9 @@ function bootstrap() {
 function on_plugins_loaded() {
 	$config = Altis\get_config()['modules']['advanced-security'];
 
+	// No need for the mu-plugin file to be written.
+	define( 'PS_DISABLE_MU', true );
+
 	if ( $config['enabled'] ) {
 		if ( file_exists( Altis\ROOT_DIR . '/content/plugins/patchstack/patchstack.php' ) ) {
 			require_once Altis\ROOT_DIR . '/content/plugins/patchstack/patchstack.php';
