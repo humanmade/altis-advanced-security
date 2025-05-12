@@ -45,7 +45,7 @@ function on_plugins_loaded() {
 }
 
 /**
- * Load miu-plugins.
+ * Load mu-plugins.
  *
  * @return void
  */
