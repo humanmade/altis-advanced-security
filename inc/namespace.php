@@ -47,8 +47,7 @@ function on_plugins_loaded() {
 		$secret_key = Altis\get_variable( 'PATCHSTACK_SECRETKEY' );
 		if ( $client_id && $secret_key ) {
 			// check if the plugin is already connected
-			if ( ( get_option( 'patchstack_clientid', false ) == false ) ||
-			     ( get_option( 'patchstack_secretkey', false ) == false ) ) {
+			if ( get_option( 'patchstack_clientid', false ) === false || get_option( 'patchstack_secretkey', false ) == false ) {
 				// set the client id and secret key
 				update_option( 'patchstack_clientid', $client_id );
 				update_option( 'patchstack_secretkey', $secret_key );
