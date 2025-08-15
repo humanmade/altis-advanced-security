@@ -19,6 +19,8 @@ function bootstrap() {
 	define( 'PS_DISABLE_MU', true );
 	add_action( 'plugins_loaded', __NAMESPACE__ . '\\on_plugins_loaded', 1 );
 	add_action( 'mu_plugins_loaded', __NAMESPACE__ . '\\on_mu_plugins_loaded', 1 );
+	add_action( 'admin_menu', __NAMESPACE__ . '\\remove_options_page', 99 );
+	add_action( 'network_admin_menu', __NAMESPACE__ . '\\remove_network_page', 99 );
 }
 
 /**
@@ -90,4 +92,22 @@ function on_mu_plugins_loaded() {
 			define( 'PS_FW_MU_RAN', true );
 		}
 	}
+}
+
+/**
+ * Remove the options page from the Settings menu.
+ *
+ * @return void
+ */
+function remove_options_page() {
+	remove_submenu_page( 'options-general.php', 'patchstack' );
+}
+
+/**
+ * Remove the network admin menu.
+ *
+ * @return void
+ */
+function remove_network_page() {
+	remove_menu_page( 'patchstack-multisite' );
 }
