@@ -16,25 +16,20 @@ class AdvancedSecurityCest {
 	 * @param AcceptanceTester $I Tester
 	 */
 	public function testAdvancedSecurityLink( AcceptanceTester $I ) {
-		$I->wantToTest( 'Settings > Security link is shown, and page renders correctly.' );
+		$I->wantToTest( 'Documentation > Advanced Security link is shown, and page renders correctly.' );
 
-		$I->resizeWindow( 1200, 800 );
+		$I->resizeWindow( 1920, 1080 );
 
 		$I->loginAsAdmin();
-		$I->amOnAdminPage( '/' );
+		$I->amOnAdminPage( 'admin.php?page=altis-documentation' );
 
-		// See the Settings > Security link in menu.
+		// See the Documentation > Advanced Security link.
+		$I->seeLink( 'Advanced Security' );
 
-		$I->seeLink( 'Settings' );
-		$I->click( 'Settings' );
+		$I->click( 'Advanced Security' );
+		// See the page title
+		$I->seeLink( 'Advanced Security powered by Patchstack', '#advanced-security-powered-by-patchstack' );
 
-		$I->seeLink( 'Security', '/wp-admin/options-general.php?page=patchstack' );
-
-		// Click the link to open the Patchstack page.
-		$I->click( 'Security' );
-
-		// See the Patchstack header.
-		$I->seeElement( '.patchstack-top-logo' );
 	}
 
 }
